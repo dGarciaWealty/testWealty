@@ -1,0 +1,111 @@
+
+
+.backend {
+    width: 100%;
+    min-height: 100vh;
+    @include flex(row, flex-start, flex-start);
+    &__container {
+        @include calc("width", "100% - 96px");
+    }
+    &__content, &__tabcontent {
+        width: 100%;
+        @include flex(column, center, flex-start);
+    }
+    &__heading {
+        text-align: center;
+        font-family: $samsungbold;
+        color: $black;
+        font-size: $subheading;
+        margin-top: $main_spacing;
+    }
+    &__tabs {
+        width: 100%;
+        @include flex(row, flex-start, flex-start);
+        border-top: 1px solid #E4E9F2;
+        border-bottom: 1px solid #E4E9F2;
+        background-color: white;
+    }
+    &__tab {
+        @include calc("width", "100% / 3");
+        height: 70px;
+        border: none;
+        background-color: transparent;
+        font-family: $samsungbold;
+        color: $blue;
+        text-transform: uppercase;
+        font-size: $button;
+        &.selected {
+            background-color: #EDF1F7;
+        }
+    }
+}
+
+
+// test
+
+.box {
+    width: auto;
+    padding: $main_spacing;
+    background-color: white;
+    border: 2px solid $accent;
+    @include border-radius(3px);
+    margin-top: $padding_horizontal;
+    min-width: 500px;
+    &__row {
+        width: 100%;
+        margin-top: $main_spacing;
+        @include flex(row, flex-start, flex-end);
+    }
+    &__title {
+        font-family: $samsungbold;
+        color: $black;
+        font-size: 22px;
+        span {
+            color: $blue;
+        } 
+    }
+    &__subtitle {
+        font-family: $samsungbold;
+        color: $placeholder;
+        text-transform: uppercase;
+        font-size: $text;
+        display: block;
+        margin-top: 8px;
+    }
+}
+
+.container {
+    width: 100%;
+    @include flex(column, center, flex-start);
+}
+
+.heading {
+    text-align: center;
+    font-family: $samsungbold;
+    color: $black;
+    font-size: $subheading;
+    margin-top: $main_spacing;
+}
+
+.logout {
+    width: 100%;
+    @include flex(row, flex-start, flex-end);
+    padding-left: $main_spacing;
+    padding-right: $main_spacing;
+    padding-top: $main_spacing;
+}
+
+.logoutbutton {
+    font-size: $button_nav;
+    font-family: $samsungbold;
+    color: $placeholder;
+    display: inline-block;
+    @include flex(column, center, center);
+    @include ease-all-transition();
+    border: none;
+    background-color: transparent;
+    &:hover {
+       color: $black;
+    }
+}
+

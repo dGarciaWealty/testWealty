@@ -1,0 +1,24 @@
+.button {
+    width: auto;
+    height: 56px;
+    padding-left: 23px;
+    padding-right: 23px;
+    @include flex(column, center, center);
+    background-color: rgba(0,149,255,0.08);
+    border: 1px solid $blue;
+    @include border-radius(20px);
+    &.full {
+        background-color: $accent;
+        border-color: $accent;
+        .button__text {
+            color: $black;
+        }
+    }
+    &__text {
+        font-family: $samsungbold;
+        font-size: $button;
+        color: $blue;
+        text-align: center;
+        &.mini {font-size: $button_nav;}
+    }
+}

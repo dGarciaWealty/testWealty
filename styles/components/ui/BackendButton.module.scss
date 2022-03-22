@@ -1,0 +1,23 @@
+.button {
+    width: auto;
+    height: 50px;
+    padding-left: 23px;
+    padding-right: 23px;
+    @include flex(column, center, center);
+    background-color: rgba(0,149,255,0.08);
+    border: 1px solid $blue;
+    @include border-radius(10px);
+    &.full {
+        background-color: $accent;
+        border-color: $accent;
+        .button__text {
+            color: $black;
+        }
+    }
+    &__text {
+        font-family: $samsungbold;
+        font-size: 14px;
+        color: $black;
+        text-align: center;
+    }
+}

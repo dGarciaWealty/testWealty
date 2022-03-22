@@ -1,0 +1,147 @@
+.footer {
+    width: 100%;
+    height: $footer_height;
+    background: $landing;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include flex(column, center, flex-end);
+    padding-bottom: 110px;
+    background-image: url("../../../public/icons/pattern.svg");
+    background-repeat: repeat;
+    &.dark {
+        background-color: $new_black;
+        .footer {
+            &__link {
+                background-color: $new_black;
+                &:hover {
+                    background-color: rgba(17,17,17,0.6);
+                }
+            }
+        }
+    }
+    &__arrow {
+        @include transform(rotate(104deg));
+        margin-bottom: 85px;
+        img {
+            display: block;
+        }
+    }
+    &__title {
+        font-family: $samsungbold;
+        font-size: $heading;
+        line-height: 56px;
+        max-width: 580px;
+        color: white;
+        text-align: center;
+        min-height: 168px;
+    }
+    &__stores {
+        @include flex(row, flex-start, flex-start);
+        margin-top: 47px;
+        a, img {
+            display: block;
+        }
+        a {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+    }
+    &__links {
+        @include flex(row, center, center);
+        margin-top: 80px;
+        margin-bottom: 24px;
+    }
+    &__link {
+        padding-left: 16px;
+        padding-right: 16px;
+        height: 40px;
+        background-color: rgba(255,255,255,0.08);
+        @include border-radius(5px);
+        @include flex(column, center, center);
+        background-color: $landing;
+        margin-left: 8px;
+        margin-right: 8px;
+        @include ease-all-transition();
+        &:hover {
+            background-color: $darkblue;
+        }
+        span {
+            font-family: $samsungbold;
+            font-weight: 300;
+            font-size: 14px;
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+        }
+    }
+    &__social {
+        margin-left: 11px;
+        margin-right: 11px;
+        @include ease-all-transition();
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__sociallinks {
+        @include flex(row, center, center);
+    }
+
+    @media (max-width: $min_width_mobile) {
+        height: $footer_mobile;
+        padding-top: 0px;
+        padding-bottom: 50px;
+        &__arrow {
+            margin-bottom: 60px;
+            img {width: 180px;}
+        }
+        &__title {
+            font-size: 33px;
+            line-height: 44px;
+            max-width: 90%;
+            min-height: 132px;
+        }
+        &__stores {
+            margin-top: 40px;
+        }
+        &__links {
+            @include flex-direction(column);
+            margin-top: 40px;
+        }
+        &__link {
+            margin-bottom: 24px;
+        }
+        &__logo {
+            margin-top: 12px;
+        }
+    }
+
+}
+
+.copy {
+    @include flex(row, center, center);
+    margin-top: 29px;
+    @media (max-width: $min_width_mobile) {
+        margin-top: 22px;
+    }
+    a {
+      @include ease-all-transition();
+      &:hover {
+          opacity: 0.7;
+      }  
+    }
+    .copytext {
+        font-family: $samsungbold;
+        font-size: $caption;
+        color: white;
+    }
+    .separator {
+        width: 4px;
+        height: 4px;
+        background-color: white;
+        @include border-radius(20px);
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}

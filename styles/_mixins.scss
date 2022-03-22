@@ -1,0 +1,423 @@
+/*
+*******************************************************
+*******************************************************
+************ MARINA | 2019
+*******************************************************
+*******************************************************
+*/
+
+
+/*
+*******************************************************
+************ FLEXBOX
+*******************************************************
+*/
+
+/*
+*   Main mixin
+*/
+
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  @mixin flexboxImp() {
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+  }
+  
+  /*
+  *  Flex direction
+  */
+  
+  @mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+  }
+  
+  /*
+    * Justify content
+  */
+  
+  @mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+  }
+  
+  /*
+    * ALign items
+  */
+  
+  @mixin align-items($align) {
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    align-items: $align;
+  }
+  
+  @mixin align-content($align) {
+    -webkit-align-content: $align;
+    -moz-align-content: $align;
+    -ms-align-content: $align;
+    align-content: $align;
+  }
+  
+  /*
+    * Flex wrap
+  */
+  @mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+  }
+  
+  /*
+    * Flexbox: column, center
+  */
+  
+  @mixin flex-column-center() {
+    @include flexbox();
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+  }
+  
+  /*
+    * Flexbox: row, center
+  */
+  
+  @mixin flex-row-center() {
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+  }
+  
+  /*
+    * Flexbox: properties shortcut
+  */
+  @mixin flex($direction, $align, $justify) {
+    @include flexbox();
+    @include flex-direction($direction);
+    @include align-items($align);
+    @include justify-content($justify);
+  }
+  
+  @mixin flexImp($direction, $align, $justify) {
+    @include flexboxImp();
+    @include flex-direction($direction);
+    @include align-items($align);
+    @include justify-content($justify);
+  }
+  
+  
+  /*
+  *******************************************************
+  ************ ANIMATIONS
+  *******************************************************
+  */
+  
+  @mixin transition($value...) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    transition: $value;
+  }
+  
+  /*
+    * Ease all element properties
+  */
+  @mixin ease-all-transition() {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  /*
+    * Ease selected properties
+  */
+  @mixin ease-transition($property) {
+    -webkit-transition: $property + ' ' + 0.3s ease;
+    -moz-transition:  $property + ' ' + 0.3s ease;
+    -ms-transition:  $property + ' ' + 0.3s ease;
+    transition:  $property + ' ' + 0.3s ease;
+  }
+  
+  @mixin transform($value...) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    transform: $value;
+  }
+  
+  
+  /*
+  *******************************************************
+  ************ WIDTH/HEIGHT
+  *******************************************************
+  */
+  
+  @mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+  }
+  
+  @mixin calcImp($property, $expression) {
+    #{$property}: -moz-calc(#{$expression}) !important;
+    #{$property}: -webkit-calc(#{$expression}) !important;
+    #{$property}: calc(#{$expression}) !important;
+  }
+  
+  /*
+  *******************************************************
+  ************ PLACEHOLDERS
+  *******************************************************
+  */
+  
+  @mixin input-placeholder {
+      &.placeholder { @content; }
+      &:-moz-placeholder { @content; }
+      &::-moz-placeholder { @content; }
+      &:-ms-input-placeholder { @content; }
+      &::-webkit-input-placeholder { @content; }
+  }
+  
+  
+  /*
+  *******************************************************
+  ************ BORDER RADIUS
+  *******************************************************
+  */
+  
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+  }
+  
+  // Single side border-radius
+  
+  @mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+  }
+  @mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+  }
+  @mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+  }
+  @mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+  }
+  
+  /*
+  *******************************************************
+  ************ POSITION ABSOLUTE
+  *******************************************************
+  */
+  
+  // Center vertically and/or horizontally an absolute positioned element
+  @mixin center($xy:xy) {
+    @if $xy == xy {
+      left: 50%;
+      top: 50%;
+      bottom: auto;
+      right: auto;
+      @include transform(translateX(-50%) translateY(-50%));
+    }
+    @else if $xy == x {
+      left: 50%;
+      right: auto;
+      @include transform(translateX(-50%));
+    }
+    @else if $xy == y {
+      top: 50%;
+      bottom: auto;
+      @include transform(translateY(-50%));
+    }
+  }
+  
+  
+  /*
+  *******************************************************
+  ************ INPUT AUTOFILL
+  *******************************************************
+  */
+  
+  /// Disable auto fill background color
+  
+  @mixin disableAutoFill {
+      -webkit-box-shadow: 0 0 0px 9999px white inset !important;
+  }
+  
+  
+  /// Change background color
+  
+  @mixin backgroundColorAutoFill($backgroundColor) {
+       -webkit-box-shadow: 0 0 0px 9999px $backgroundColor inset !important;
+  }
+  
+  
+  /// Change text color
+  
+  @mixin textColorAutoFill($color) {
+    -webkit-text-size-adjust: 100%;
+      -webkit-text-fill-color: $color !important;
+  }
+  
+  
+  /// Change background color on hover
+  
+  @mixin hoverBackgroundColorAutoFill($backgroundColor) {
+      &:hover, &:focus {
+          -webkit-box-shadow: 0 0 0px 9999px $backgroundColor inset !important;
+      }
+  }
+  
+  
+  /// Change text color on hover
+  
+  @mixin hoverTextColorAutoFill($color) {
+      &:hover, &:focus {
+          -webkit-text-fill-color: $color !important;
+      }
+  }
+  
+  
+  /*
+  *******************************************************
+  ************ RETINA BACKGROUND IMAGES
+  *******************************************************
+  */
+  
+  @mixin retina($path, $cap: 2, $size: auto auto, $extras: null) {
+  
+  
+        $position: -1;
+        $strpath: '#{$path}';
+        $length: str-length($strpath);
+  
+  
+        @for $i from $length through $length - 10{
+          @if $position == -1 {
+            $char : str-slice($strpath, $i, $i);
+            @if str-index($char, ".") == 1 {
+              $position: $i;
+            }
+          }
+        }
+  
+  
+        @if $position != -1 {
+          $ext: str-slice($strpath, $position + 1, $length);
+          $base: str-slice($strpath, 1, $position - 1);
+          $at1x_path: "#{$base}.#{$ext}";
+          $at2x_path: "#{$base}@2x.#{$ext}";
+  
+  
+          background: url("#{$at1x_path}") $extras;
+          background-size: $size;
+  
+  
+          @media all and (-webkit-min-device-pixel-ratio : 1.5),
+          all and (-o-min-device-pixel-ratio: 3/2),
+          all and (min--moz-device-pixel-ratio: 1.5),
+          all and (min-device-pixel-ratio: 1.5) {
+            background      : url("#{$at2x_path}") $extras;
+            background-size : $size;
+          }
+  
+  
+          @if $cap >= 2 {
+            @for $env from 2 through $cap {
+              $suffix: "@#{$env}x";
+              @media (-webkit-min-device-pixel-ratio: $env),
+              (min-resolution: $env * 96dpi) {
+                background      : url("#{$base}#{$suffix}.#{$ext}") $extras;
+                background-size : $size;
+              }
+            }
+          }
+  
+        } @else {
+          background: url("#{$path}") $extras;
+          background-size: $size;
+        }
+  
+      }
+  
+  /*
+  *******************************************************
+  ************ LONG WORDS
+  *******************************************************
+  */
+  
+  @mixin longWord() {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    //word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+  
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    // -ms-hyphens: auto;
+    // -moz-hyphens: auto;
+    // -webkit-hyphens: auto;
+    // hyphens: auto;
+  }
+  
+  @mixin ellipsis() {
+    overflow: hidden;
+    // white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  
+  /*
+  *******************************************************
+  ************ FULL WIDTH IMG
+  *******************************************************
+  */
+  
+  @mixin fullimage() {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  

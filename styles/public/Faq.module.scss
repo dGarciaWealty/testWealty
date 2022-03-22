@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    @include flex(column, center, flex-start);
+    padding-top: 228px;
+    padding-bottom: 100px;
+    @media (max-width: $min_width_mobile) {
+        padding-top: 160px;
+    }
+}
+
+.faqs {
+    width: $container_max;
+    @include flex(column, flex-start, flex-start);
+    &__title {
+        font-family: $samsungbold;
+        font-size: $heading;
+        color: $placeholder;
+        margin-bottom: 51px;
+    }
+    @media (max-width: 1200px) and (min-width: 600px) {
+        width: 100%;
+        padding-left: $padding_horizontal;
+        padding-right: $padding_horizontal;
+    }
+    @media (max-width: $min_width_mobile) {
+        width: 100%;
+        padding-left: $padding_mini;
+        padding-right: $padding_mini;
+        &__title {
+            font-size: 36px;
+        }
+    }
+}

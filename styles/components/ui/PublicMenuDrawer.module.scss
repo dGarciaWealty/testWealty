@@ -1,0 +1,100 @@
+.drawer {
+    &__header {
+      width: 100%;
+      @include flex(row, center, flex-end);
+      padding-left: $padding_mini;
+      padding-right: $padding_mini;
+      padding-top: 32px;
+      background-color: rgba(237,241,247, 1);
+      &.dark {
+        background-color: #F5F5F5;
+        .drawer__line {
+            background-color: $new_black;
+        }
+      }
+    }
+    &__back {
+        width: 24px;
+        height: 24px;
+        @include flex(column, center, center);
+        background-color: transparent;
+        border: none;
+    }
+    &__line {
+        width: 20px;
+        height: 2px;
+        @include border-radius(3px);
+        background-color: $landing;
+        &.first {
+            @include transform(rotate(45deg));
+        }
+        &.second {
+            @include transform(rotate(-45deg));
+            position: relative;
+            top: -2px;
+        }
+    }
+    &__content {
+        width: 100%;
+        flex-grow: 1;
+        padding-top: 50px;
+        background-color: rgba(237,241,247, 1);
+        padding-left: $padding_mini;
+        padding-right: $padding_mini;
+        @include flex(column, center, space-between);
+        &.dark {
+            background-color: #F5F5F5;
+            .drawer__link {
+                color: $new_black;
+            }
+          }
+    }
+    &__top {
+        @include flex(column, center, flex-start);
+        padding-top: 34px;
+    }
+    &__bottom {
+        @include flex(column, center, flex-start);
+        padding-bottom: 34px;
+    }
+    &__link {
+        font-family: $samsungmedium;
+        font-size: 24px;
+        text-align: center;
+        color: $landing;
+        margin-bottom: 14px;
+    }
+    &__minilink {
+        font-family: $samsungbold;
+        font-size: $caption;
+        color: $placeholder;
+        &.first {
+            margin-bottom: 56px;
+        }
+    }
+    &__logo {
+        margin-top: 22px;
+        img {
+            width: 120px;
+        }
+    }
+    &__row {
+        margin-top: 22px;
+        @include flex(row, center, center);
+    }
+    &__separator {
+        width: 4px;
+        height: 4px;
+        background-color: $placeholder;
+        @include border-radius(20px);
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    &__contactlink {
+        font-family: $samsungbold;
+        font-size: $button;
+        color: $landing;
+        text-align: center;
+        margin-bottom: 34px;
+    }
+}

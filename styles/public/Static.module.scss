@@ -1,0 +1,59 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    min-height: 672px;
+    background-color: $landing;
+    background-image: url("../../public/icons/pattern.svg");
+    background-repeat: repeat;
+    padding-left: $landing_padding;
+    padding-top: 51px;
+    .navigation {
+        &__logo {
+            position: relative;
+            top: 6px;
+        }
+    }
+    .heading {
+        font-size: 200px;
+        color: white;
+        font-family: $samsungbold;
+        margin-top: 80px;
+    }
+    .subheading {
+        font-size: 30px;
+        color: white;
+        font-family: $samsungmedium;
+        margin-top: 0px;
+        max-width: 460px;
+    }
+    @media (max-width: 1300px) and (min-width: 1025px) {
+        padding-left: 100px;
+    }
+    @media (max-width: 1024px) and (min-width: 900px) {
+        padding-left: $padding_horizontal;
+    }
+    @media (max-width: 899px) and (min-width: 600px) {
+        padding-left: $main_spacing;
+        padding-right: $main_spacing;
+        .heading {
+            font-size: 150px;
+        }
+    }
+    @media (max-width: $min_width_mobile) {
+        padding-left: $padding_mini;
+        padding-right: $padding_mini;
+        .heading {
+            font-size: 110px;
+        }
+        .subheading {
+            font-size: 20px;
+            max-width: 260px;
+        }
+    }
+}
+
+.iframe {
+    width: 100%;
+    height: 100vh;
+    min-height: 672px;
+}

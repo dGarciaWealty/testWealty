@@ -1,0 +1,30 @@
+.dropzone {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    border: 1px solid #E4E9F2;
+    @include border-radius(10px);
+    @include flex(column, center, center);
+    overflow: hidden;
+    cursor: pointer;
+    &.mini {
+        img {
+            max-width: 120px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+    }
+    .full {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    &__text {
+        font-size: $mini;
+        color: $placeholder;
+        font-family: $samsungmedium;
+        text-align: center;
+    }
+}
