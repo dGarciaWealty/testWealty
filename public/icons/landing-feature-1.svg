@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>coin-insert</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-197.000000, -553.000000)" fill="#10FCFD">
+            <g id="Group-6" transform="translate(181.000000, 537.000000)">
+                <g id="coin-insert" transform="translate(16.000000, 16.000000)">
+                    <path d="M9,16 C12.866,16 16,12.866 16,9 C16,5.13401 12.866,2 9,2 C5.13401,2 2,5.13401 2,9 C2,12.866 5.13401,16 9,16 Z M9,18 C13.9706,18 18,13.9706 18,9 C18,4.02944 13.9706,0 9,0 C4.02944,0 0,4.02944 0,9 C0,13.9706 4.02944,18 9,18 Z" id="Shape"></path>
+                    <path d="M0,17 C0,16.4477 0.44772,16 1,16 L17,16 C17.5523,16 18,16.4477 18,17 C18,17.5523 17.5523,18 17,18 L1,18 C0.44772,18 0,17.5523 0,17 Z" id="Path" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

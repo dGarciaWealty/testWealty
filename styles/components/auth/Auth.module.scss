@@ -1,0 +1,172 @@
+.container {
+    width: 100%;
+    @include flex(column, center, flex-start);
+}
+
+.box {
+    width: 600px;
+    background-color: #FFFFFF;
+    @include border-radius(5px);
+    margin-top: 80px;
+    margin-bottom: 100px;
+    padding-top: $main_spacing;
+    padding-bottom: $main_spacing;
+    @include flex(column, center, flex-start);
+}
+
+.form {
+    width: 100%;
+    @include flex(column, center, flex-start);
+    padding-left: $main_spacing;
+    padding-right: $main_spacing;
+    padding-top: $main_spacing;
+    &__row {
+        width: 100%;
+        @include flex(row, flex-start, space-between);
+    }
+    &__coderow {
+        width: 100%;
+        @include flex(row, flex-start, center);
+        margin-bottom: $main_spacing;
+    }
+    &__button {
+        width: 100%;
+        button {
+            width: 100%;
+        }
+    }
+    &__linkcontainer {
+        margin-bottom: $main_spacing;
+    }
+    &__skipcontainer {
+        margin-top: $main_spacing;
+    }
+    &__checkcontainer {
+        width: 100%;
+        @include flex(row, center, flex-start);
+        margin-bottom: $main_spacing;
+        input {
+            display: none;
+        }
+        input[value=true] + .form__check {
+            background-color: $accent;
+            border-color: $accent;
+            &::before {
+                content: "";
+                position: absolute;
+                @include center(xy);
+                width: 8px;
+                height: 8px;
+                background-image: url("../../../public/icons/check.svg");
+            }
+        }
+    }
+    &__check {
+        width: 20px;
+        height: 20px;
+        display: block;
+        border: 1px solid rgba(143, 155, 179, 0.48);
+        background-color: rgba(143, 155, 179, 0.08);
+        @include border-radius(3px);
+        margin-right: 8px;
+        position: relative;
+        &.invalid {
+            border-color: $error;
+            background-color: rgba(255,61,113,0.16);
+        }
+    }
+    &__label {
+        font-family: $samsungbold;
+        font-size: $mini;
+        color: $black;
+        a {
+            color: $blue2;
+        }
+    }
+    &__code {
+        &.error {
+            input {
+                border-color: $error;
+                background-color: rgba(255,61,113,0.16);
+            }
+        }
+        input {
+            width: 60px;
+            height: 80px;
+            background-color:rgba(143, 155, 179, 0.08);
+            border:1px solid rgba(143, 155, 179, 0.48);
+            @include border-radius(3px);
+            margin-left: 8px;
+            margin-right: 8px;
+            text-align: center;
+            font-family: $samsungbold;
+            font-size: 30px;
+            color: $black;
+            outline: none !important;
+        }
+    }
+    &__error {
+        font-family: $samsungbold;
+        font-size: $caption;
+        color: $error;
+        margin-bottom: $main_spacing;
+        text-align: center;
+    }
+    &__intro {
+        text-align: center;
+        font-family: $samsungbold;
+        color: $black;
+        text-transform: uppercase;
+        font-size: $text;
+        display: block;
+        margin-top: -8px;
+    }
+    &__tpvcode {
+        text-align: center;
+        font-family: $samsungbold;
+        color: $blue;
+        text-transform: uppercase;
+        font-size: $subheading;
+        display: block;
+        margin-bottom: $main_spacing;
+    }
+}
+
+.heading {
+    text-align: center;
+    font-family: $samsungbold;
+    color: $black;
+    font-size: 22px;
+}
+
+.link {
+    text-align: center;
+    font-family: $samsungbold;
+    color: $blue;
+    text-transform: uppercase;
+    font-size: $text;
+    display: block;
+    margin-top: $main_spacing;
+}
+
+.logout {
+    width: 100%;
+    @include flex(row, flex-start, flex-end);
+    padding-left: $main_spacing;
+    padding-right: $main_spacing;
+    padding-top: $main_spacing;
+}
+
+.logoutbutton {
+    font-size: $button_nav;
+    font-family: $samsungbold;
+    color: $placeholder;
+    display: inline-block;
+    @include flex(column, center, center);
+    @include ease-all-transition();
+    border: none;
+    background-color: transparent;
+    &:hover {
+       color: $black;
+    }
+}

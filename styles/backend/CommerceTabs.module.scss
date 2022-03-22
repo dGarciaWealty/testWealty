@@ -1,0 +1,81 @@
+.content {
+    width: 100%;
+    @include flex(row, flex-start, space-between);
+    &__form {
+        padding-top: $main_spacing * 2;
+        @include calc("width", "100% - 600px - 32px");
+        padding-left: $main_spacing;
+    }
+    &__preview {
+        width: 600px;
+        @include calc("height", "100vh - 72px");
+        background-color: #EDF1F7;
+        padding: $main_spacing;
+        p {
+            font-family: $samsungbold;
+            margin-bottom: 8px;
+            span {
+                color: $placeholder;
+                font-family: $samsungmedium;
+            }
+        }
+    }
+    &__row {
+        @include flex(row, flex-start, space-between);
+        width: 100%;
+        &.end {
+            margin-top: $main_spacing;
+            @include justify-content(flex-end);
+        }
+    }
+    &__uploaderbox {
+        @include calc("width", "(100% - 216px)");
+        &.mini {
+            width: 200px;
+            img {
+                max-width: 120px;
+                height: auto;
+                display: block;
+                object-fit: contain;
+            }
+        }
+    }
+    &__uploader {
+        width: 100%;
+        height: 200px;
+        background-color: white;
+        border: 1px solid $placeholder;
+        @include border-radius(10px);
+        @include flex(column, center, center);
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+    &__label {
+        font-family: $samsungbold;
+        font-size: $caption;
+        color: $black;
+        display: block;
+        margin-bottom: 8px;
+    }
+    &__delete {
+        font-family: $samsungbold;
+        font-size: $caption;
+        color: $error;
+        display: block;
+        margin-top: 8px;
+        text-transform: uppercase;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.form__row {
+    @include flex(row, flex-start, space-between);
+    width: 100%;
+}
+

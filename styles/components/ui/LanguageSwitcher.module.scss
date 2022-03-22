@@ -1,0 +1,98 @@
+.switcher {
+    width: 80px;
+    margin-left: 36px;
+    position: relative;
+    top: -1px;
+    &.drawer {
+        margin-left: 0px;
+        .switcher {
+            &__select {
+                background-color: rgba(237,241,247, 1);
+            }
+        }
+    }
+    &.dark {
+        .switcher {
+            &__toggle, &__dropdown {
+                border-color: $black;
+                span {
+                    color: $black;
+                }
+            }
+            &__select {
+                color: $black;
+            }
+            &__arrow {
+                filter: brightness(0);
+            }
+        }
+    }
+    &__toggle {
+        width: 100%;
+        border: 2px solid $placeholder;
+        @include flex(row, center, space-between);
+        padding-left: 12px;
+        padding-right: 12px;
+        height: 52px;
+        @include border-radius(17px);
+        background-color: transparent;
+        cursor: pointer;
+        span {
+            font-family: $samsungbold;
+            font-size: $button_nav;
+            color: $placeholder;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 20px;
+            letter-spacing: 1.4px;
+        }
+    }
+    &__dropdown {
+        width: 100%;
+        position: absolute;
+        height: auto;
+        top: 37px;
+        border: 2px solid $placeholder;
+        border-top: none;
+        padding-top: 15px;
+        border-bottom-left-radius: 17px;
+        border-bottom-right-radius: 17px;
+    }
+    &__select {
+        width: 100%;
+        height: 42px;
+        @include flex(row, center, flex-start);
+        padding-left: 12px;
+        padding-right: 12px;
+        font-family: $samsungbold;
+        font-size: 16px;
+        color: $placeholder;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 20px;
+        letter-spacing: 1.4px;
+        cursor:pointer;
+    }
+    @media (max-width: 899px) and (min-width: 600px) {
+        margin-left: 25px;
+    }
+    @media (max-width: $min_width_mobile) {
+        width: 76px;
+        margin-left: 16px;
+        &__toggle {
+            height: 42px;
+            span {
+                font-size: 14px;
+            }
+        }
+        &__dropdown {
+            top: 27px;
+            overflow: hidden;
+        }
+        &__select {
+            height: 32px;
+            font-size: 14px;
+            background-color: white;
+        }
+    }
+}

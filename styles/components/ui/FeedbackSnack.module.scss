@@ -1,0 +1,26 @@
+.snack {
+    &.success {
+        & > div {
+            background-color: $green;
+        }   
+    }
+    &.fail {
+        & > div {
+            background-color: $error;
+        }   
+    }
+    &.info {
+        & > div {
+            background-color: $blue;
+        }   
+    }
+    & > div {
+        max-width: 250px;
+        padding: $padding_mini;
+        & > div {
+            font-family: $samsungbold;
+            font-size: $mini;
+            color: white;
+        }
+    }
+}

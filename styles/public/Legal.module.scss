@@ -1,0 +1,50 @@
+.legal {
+    width: 100%;
+    padding-left: $landing_padding;
+    padding-right: $landing_padding;
+    padding-top: 220px;
+    padding-bottom: 181px;
+    @include flex(column, flex-start, flex-start);
+    &__heading {
+        font-family: $samsungbold;
+        font-size: $heading;
+        color: $landing;
+        line-height: 70px;
+    }
+    &__texts {
+        margin-top: 60px;
+    }
+    &__text {
+        opacity: 0.6;
+        font-family: $samsungmedium;
+        font-size: $text;
+        color: $black;
+        letter-spacing: 0;
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+    @media (max-width: 1300px) and (min-width: 1025px) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    @media (max-width: 1024px) and (min-width: 900px) {
+        padding-top: 200px;
+        padding-left: $padding_horizontal;
+        padding-right: $padding_horizontal;
+    }
+    @media (max-width: 899px) and (min-width: 600px) {
+        padding-top: 200px;
+        padding-left: $main_spacing;
+        padding-right: $main_spacing;
+    }
+    @media (max-width: $min_width_mobile) {
+        padding-top: 130px;
+        padding-bottom: 130px;
+        padding-left: $padding_mini;
+        padding-right: $padding_mini;
+        &__heading {
+            font-size: 44px;
+            line-height: 55px;
+        }
+    }
+}

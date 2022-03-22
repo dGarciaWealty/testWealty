@@ -1,0 +1,129 @@
+.input {
+    width: 100%;
+    @include flex(column, flex-start, flex-start);
+    margin-bottom: 32px;
+    position: relative;
+    &.half {
+        @include calc("width", "(100% - 16px) / 2");
+    }
+    .inside {
+        width: 100%;
+        font-family: $samsungbold;
+        font-size: $text;
+        color: $black;
+        height: 40px;
+        @include border-radius(12px);
+        border: 1px solid #E4E9F2;
+        padding-left: $padding_mini;
+        outline: none !important;
+        &::placeholder {
+            color: $placeholder;
+        }
+        &.error {
+            border-color: $error;
+        }
+    }
+    .textarea {
+        width: 100%;
+        font-family: $samsungbold;
+        font-size: $text;
+        color: $black;
+        height: 146px;
+        @include border-radius(12px);
+        border: 1px solid #E4E9F2;
+        padding-left: $padding_mini;
+        padding-right: $padding_mini;
+        outline: none !important;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        resize: none;
+        &::placeholder {
+            color: $placeholder;
+        }
+        &.error {
+            border-color: $error;
+        }
+    }
+    &__label {
+        font-family: $samsungbold;
+        font-size: $caption;
+        color: $black;
+        display: block;
+        margin-bottom: 8px;
+    }
+    &__message {
+        font-family: $samsungbold;
+        color: $error;
+        font-size: $caption;
+        margin-top: 8px;
+        margin-bottom: -12px;
+    }
+    &__error {
+        position: absolute;
+        top: 30px;
+        right: 12px;
+        img {
+            display: block;
+        }
+    }
+    &__password {
+        position: absolute;
+        top: 30px;
+        right: 0px;
+        border: none;
+        background-color: transparent;
+        padding-right: 12px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        img {
+            display: block;
+        }
+    }
+}
+
+
+// autocomplete material ui
+
+.root {
+    width: 100%;
+    border: 1px solid #E4E9F2;
+    @include border-radius(12px);
+    background-color: white;
+    &.error {
+        border-color: $error;
+    }
+}
+
+.inputRoot {
+    width: 100%;
+    height: 40px;
+    font-family: $samsungbold !important;
+    font-size: $text !important;
+    color: $black !important;
+    padding-left: $padding_mini;
+    input {
+        &::placeholder {
+            color: $placeholder !important;
+            opacity: 1;
+        }
+    }
+    &::before, &::after {
+        content: none !important;
+    }
+}
+
+.option {
+    font-family: $samsungmedium;
+    font-size: $text;
+    color: $placeholder;
+    &[aria-selected="true"] {
+        background-color: $light_text;
+        font-family: $samsungbold;
+    }
+}
+
+.paper {
+    border: 1px solid #E4E9F2 !important;
+    box-shadow: none !important;
+    border-radius: 10px !important;
+}

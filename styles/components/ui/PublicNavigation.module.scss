@@ -1,0 +1,183 @@
+// ------------------------------------ //
+//  Public navigation
+// ------------------------------------ //
+
+.navigation {
+    width: 100%;
+    padding-top: 51px;
+    padding-left: 181px;
+    padding-right: 69px;
+    z-index: 9;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    &.dark {
+        .navigation__link {
+            color: $new_black;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+        .navigation__logo {
+            position: relative;
+            height: 58px;
+        }
+        .navigation__logo > span {
+            font-family: $samsung;
+            font-size: 11px;
+            color: $new_black;
+            letter-spacing: 3.21px;
+            position: absolute;
+            bottom: 13px;
+            right: -121px;
+            width: 108px;
+            display: inline-block;
+        }
+    }
+    @include flex(row, center, space-between);
+    @media (max-width: 1300px) and (min-width: 1025px) {
+        padding-left: 100px;
+    }
+    @media (max-width: 1024px) and (min-width: 900px) {
+        padding-left: $padding_horizontal;
+        padding-right: $padding_horizontal;
+    }
+    @media (max-width: 899px) and (min-width: 600px) {
+        padding-left: $main_spacing;
+        padding-right: $main_spacing;
+        &__logo {
+            top: 0px !important;
+        }
+        &__link {
+            margin-right: 25px !important;
+            font-size: 15px !important;
+        }
+        &.dark {
+            .navigation__logo {
+                span {
+                    position: absolute;
+                    right: auto;
+                    left: 51px;
+                    bottom: -16px !important;
+                }
+            }
+        }
+    }
+    @media (max-width: $min_width_mobile) {
+        padding-top: 20px;
+        padding-left: $padding_mini;
+        padding-right: $padding_mini;
+        padding-bottom: 20px;
+        position: fixed;
+        z-index: 99;
+        background-color: white;
+
+        &__logo {
+            top: 0px !important;
+            & > div {
+                height: 100%;
+            }
+            img {
+                height: 40px;
+            }
+            span {
+                bottom: 7px !important;
+                right: -117px !important;
+            }
+        }
+        &__link {
+            font-size: 15px !important;
+            padding-top: 0px;
+        }
+        &__right {
+            &.showMobile {
+                display: none;
+            }
+        }
+        &__toggle {
+            &.showMobile {
+                display: flex !important;
+            }
+        }
+    }
+    &__right {
+        @include flex(row, center, flex-end);
+        position: relative;
+        top: 3px;
+    }
+    &.dark {
+        .navigation__logo {
+            position: relative;
+            height: auto;
+            span {
+                bottom: 9px;
+            }
+        }
+        .navigation__toggle {
+            span {
+                background-color: $new_black;
+            }
+        }
+    }
+    &__logo {
+        position: relative;
+        top: 6px;
+        img {
+            display: block;
+        }
+    }
+    &__link {
+        font-size: $button_nav;
+        font-family: $samsungbold;
+        color: $placeholder;
+        display: inline-block;
+        @include flex(column, center, center);
+        height: 48px;
+        @include ease-all-transition();
+        &.margin {
+            margin-right: 36px;
+        }
+        &:hover {
+           color: $black;
+        }
+    }
+    &__button {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: $button_nav;
+        font-family: $samsungbold;
+        color: $blue;
+        height: 48px;
+        border: 1px solid $blue;
+        @include border-radius(20px);
+        @include flex(column, center, center);
+        margin-left: 24px;
+        background-color: rgba(0,149,255,0.08);
+        @include ease-all-transition();
+        &:hover {
+            background-color: rgba(0,149,255,0.28);
+        }
+    }
+    &__toggle {
+        width: 24px;
+        height: 24px;
+        @include flex(column, center, center);
+        background-color: transparent;
+        border: none;
+        display: none;
+        cursor: pointer;
+    }
+    &__line {
+        width: 20px;
+        height: 2px;
+        @include border-radius(3px);
+        background-color: $landing;
+        margin-bottom: 2px; 
+        margin-top: 2px; 
+    }
+    &__logo {
+       & > div {
+           @include flexbox();
+       } 
+    }
+}

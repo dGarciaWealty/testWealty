@@ -1,0 +1,191 @@
+.feature {
+    width: 100%;
+    height: auto;
+    background-color: $bg;
+    border: 1px solid rgba(0, 149, 255, 0.24);
+    @include border-radius(16px);
+    padding-top: 47px;
+    padding-bottom: 47px;
+    padding-left: 79px;
+    padding-right: 79px;
+    position: relative;
+    margin-bottom: 48px;
+
+    &.nopadding {
+        padding-bottom: 0px;
+    }
+
+    &.big {
+        @include flex(row, flex-start, space-between);
+        .feature {
+            &__left {
+                max-width: 391px;
+            }
+            &__right {
+                position: absolute;
+                right: 93px;
+                top: 25px;
+                img {
+                    @include transform(rotate(-10deg));
+                }
+            }
+        }
+    }
+
+    &.bis {
+        display: none;
+    }
+
+    &__left {
+        width: 100%;
+        @include flex(column, flex-start, flex-start);
+    }
+
+    &__circle {
+        width: 42px;
+        height: 42px;
+        background: linear-gradient(327.37deg, #4A3DE8 15.07%, #10A8FD 83.76%);
+        border: 1px solid rgba(143, 155, 179, 0.24);
+        box-sizing: border-box;
+        @include border-radius(100px);
+        @include flex(column, center, center);
+    }
+
+    &__number {
+        font-family: $montserratbold;
+        font-size: $button;
+        color: #FFFFFF;
+        text-align: center;
+    }
+
+    &__title {
+        font-family: $samsungbold;
+        font-size: $feature;
+        line-height: 40px;
+        color: $black;
+        margin-top: 15px;
+        margin-bottom: $main_spacing;
+    }
+
+    &__description {
+        font-family: $samsungmedium;
+        font-size: $text;
+        line-height: 24px;
+        color: $black;
+        opacity: 0.6;
+        margin-bottom: $main_spacing;
+    }
+
+    @media (max-width: 999px) and (min-width: 600px) {
+        padding-left: $main_spacing;
+        padding-right: $main_spacing;
+        &__circle {
+            width: 66px;
+            height: 66px;
+            background: linear-gradient(327.37deg, #4A3DE8 15.07%, #10A8FD 83.76%);
+            border: 1px solid rgba(143, 155, 179, 0.24);
+            box-sizing: border-box;
+            @include border-radius(100px);
+            @include flex(column, center, center);
+            position: absolute;
+            left: $main_spacing;
+            top: -33px;
+        }
+        &__number {
+            font-size: 29px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        &__title {
+            margin-top: 9px;
+        }
+        &.big {
+            .feature {
+                &__left {
+                    max-width: 50%;
+                }
+                &__title {max-width: 271px;}
+                &__right {
+                    position: relative;
+                    width: 50%;
+                    right: 0px;
+                    top: 0px;
+                    @include flex(column, flex-end, flex-start);
+                    img {
+                        position: absolute;
+                        width: 283px;
+                        top: -30px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $min_width_mobile) {
+        margin-bottom: 59px;
+        padding-left: $main_spacing;
+        padding-right: $main_spacing;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        &.bis {
+            display: block;
+        }
+
+        &.hide {
+            display: none;
+        }
+
+        &.last {
+            min-height: 564px;
+        }
+
+        &__circle {
+            width: 58px;
+            height: 58px;
+            background: linear-gradient(327.37deg, #4A3DE8 15.07%, #10A8FD 83.76%);
+            border: 1px solid rgba(143, 155, 179, 0.24);
+            box-sizing: border-box;
+            @include border-radius(100px);
+            @include flex(column, center, center);
+            position: absolute;
+            @include center(x); 
+            top: -29px;
+        }
+        &__number {
+            font-size: 29px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        &__title {
+            margin-top: 9px;
+            font-size: 22px;
+            line-height: 32px;
+            margin-bottom: 24px;
+        }
+        &.big {
+            @include flex-direction(column);
+            .feature {
+                &__left {
+                    width: 100%;
+                    max-width: 100%;
+                }
+                &__title {max-width: 271px;}
+                &__right {
+                    margin-top: 15px;
+                    position: relative;
+                    width: 100%;
+                    right: 0px;
+                    top: 0px;
+                    @include flex(column, flex-end, flex-start);
+                    img {
+                        position: relative;
+                        width: 90%;
+                        margin: 0 auto;
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
